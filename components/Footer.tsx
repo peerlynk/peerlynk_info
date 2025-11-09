@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
       {/* Background Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(56,189,248,0.08),transparent_70%)] pointer-events-none" />
 
-      <div className="relative container mx-auto px-6 sm:px-10 lg:px-20 py-20">
+      <div className="relative container mx-auto px-6 sm:px-10 lg:px-20 py-10">
         {/* Top Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 pb-16">
           {/* Brand Section */}
@@ -159,7 +159,7 @@ const Footer: React.FC = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
-          className="mt-16 pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm"
+          className="mt-2 pt-6 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm"
         >
           <p className="text-slate-500">
             &copy; {new Date().getFullYear()} Peerlynk. All rights reserved.
