@@ -1,39 +1,59 @@
 import React from "react";
+import { FaEnvelope, FaInstagram, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 
 interface TeamMember {
   name: string;
   role: string;
   image: string;
   bio: string;
+  gmail?: string;
+  linkedin?: string;
+  instagram?: string;
+  x?: string; // X (Twitter)
 }
+
 const teamMembers: TeamMember[] = [
   {
     name: "Dhruv Pal",
     role: "Founder & CEO",
-    image: `https://res.cloudinary.com/dqppqvblk/image/upload/v1762668962/dhruvpal_fd00uj.jpg`,
+    image: "https://res.cloudinary.com/dqppqvblk/image/upload/v1762668962/dhruvpal_fd00uj.jpg",
     bio: "Founder and visionary leader who single-handedly conceptualized, designed, and built the entire Peerlynk platform from the ground up. Combines technical expertise with strategic thinking to turn innovative ideas into fully functional, scalable solutions.",
+    gmail: "mailto:dhruvpalpeerlynk@gmail.com",
+    linkedin: "https://linkedin.com/in/dhruvpal",
+    instagram: "https://instagram.com/dhruvpal",
+    x: "https://x.com/dhruvpal",
   },
   {
     name: "Diwakar Singh",
     role: "Full-Stack Engineer",
     image: "https://res.cloudinary.com/dqppqvblk/image/upload/v1762668962/diwakarSingh_mzueoi.jpg",
     bio: "Problem-solving enthusiast with expertise in full-stack development and DSA. Builds robust, efficient systems and contributes to high-performance, scalable applications.",
+    gmail: "mailto:diwakar.peerlynk@gmail.com",
+    linkedin: "https://linkedin.com/in/diwakar-singh",
+    instagram: "https://instagram.com/diwakar.singh",
+    x: "https://x.com/diwakar_singh",
   },
   {
     name: "Akash Kumar",
     role: "Full-Stack Engineer",
     image: "https://res.cloudinary.com/dqppqvblk/image/upload/v1762668962/akashKumar_jyzzn5.jpg",
     bio: "Web full-stack developer skilled in designing seamless and engaging user experiences. Strong background in DSA and creating scalable, maintainable applications.",
+    gmail: "mailto:akash.peerlynk@gmail.com",
+    linkedin: "https://linkedin.com/in/akashkumar",
+    instagram: "https://instagram.com/akashkumar",
+    x: "https://x.com/akashkumar",
   },
   {
     name: "Ankit Pal",
     role: "Head of Sales & Marketing",
     image: "https://res.cloudinary.com/dqppqvblk/image/upload/v1762668962/ankitpal_otv1v7.jpg",
     bio: "Expert in driving growth and building strategic relationships. Focuses on delivering intelligent marketing solutions that enhance user engagement and platform adoption.",
+    gmail: "mailto:ankit.peerlynk@gmail.com",
+    linkedin: "https://linkedin.com/in/ankitpal",
+    instagram: "https://instagram.com/ankitpal",
+    x: "https://x.com/ankitpal",
   },
 ];
-
-
 
 const TeamPage: React.FC = () => {
   return (
@@ -70,10 +90,63 @@ const TeamPage: React.FC = () => {
               />
               <h3 className="text-xl font-semibold">{member.name}</h3>
               <p className="text-brand-primary font-medium mb-2">{member.role}</p>
-              <p className="text-slate-400 text-sm leading-relaxed">{member.bio}</p>
+              <p className="text-slate-400 text-sm leading-relaxed mb-4">{member.bio}</p>
+
+              {/* Social Icons */}
+              <div className="flex justify-center gap-5 mt-4">
+                {member.gmail && (
+                  <a
+                    href={member.gmail}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-full bg-slate-900 border border-slate-700 
+                      hover:border-brand-primary hover:text-brand-primary hover:shadow-brand-primary/30 
+                      transition-all duration-300 hover:scale-110"
+                  >
+                    <FaEnvelope size={20} />
+                  </a>
+                )}
+                {member.linkedin && (
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-full bg-slate-900 border border-slate-700 
+                      hover:border-brand-primary hover:text-brand-primary hover:shadow-brand-primary/30 
+                      transition-all duration-300 hover:scale-110"
+                  >
+                    <FaLinkedin size={20} />
+                  </a>
+                )}
+                {member.x && (
+                  <a
+                    href={member.x}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-full bg-slate-900 border border-slate-700 
+                      hover:border-brand-primary hover:text-brand-primary hover:shadow-brand-primary/30 
+                      transition-all duration-300 hover:scale-110"
+                  >
+                    <FaXTwitter size={20} />
+                  </a>
+                )}
+                {member.instagram && (
+                  <a
+                    href={member.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-full bg-slate-900 border border-slate-700 
+                      hover:border-brand-primary hover:text-brand-primary hover:shadow-brand-primary/30 
+                      transition-all duration-300 hover:scale-110"
+                  >
+                    <FaInstagram size={20}  />
+                  </a>
+                )}
+              </div>
             </div>
           ))}
         </div>
+
         {/* CTA Button */}
         <div className="mt-16">
           <a

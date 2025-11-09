@@ -92,7 +92,7 @@ const AboutPage: React.FC = () => {
               href="/commingSoon"
               className="inline-flex items-center gap-3 bg-brand-primary text-black px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
             >
-              Get Started — Join Peerlynk
+             Join Peerlynk
             </a>
             <a
               href="/#features"

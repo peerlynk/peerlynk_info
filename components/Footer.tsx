@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
                   className="p-3 rounded-xl bg-gray-950 border border-slate-800 hover:scale-110 transition-all duration-300 shadow-md hover:shadow-[0_0_15px_rgba(0,0,0,0.5)]"
                   // style={{ color }}
                 >
-                  <Icon className ="h-6 w-6" />
+                  <Icon size={24} />
                 </a>
               ))}
             </div>
