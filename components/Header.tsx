@@ -170,10 +170,10 @@ const Header: React.FC = () => {
             <div className="flex items-center space-x-2">
               <div className="hidden sm:flex items-center space-x-2">
                 <a
-                  href="/commingSoon"
+                  href="/comming-soon"
                   className="flex items-center space-x-2 bg-white text-slate-900 px-5 py-2.5 rounded-full hover:opacity-90 transition-all duration-300 text-base font-semibold shadow-md hover:shadow-lg transform hover:scale-105"
                   rel="noopener noreferrer"
-                  target="_blank"
+                  // target="_blank"
                   data-analytics="get-app-header-click"
                 >
                   <PlayStoreIcon className="h-6 w-6" />
@@ -212,7 +212,7 @@ const Header: React.FC = () => {
             {mobileNavLinks.map(link => <NavLinkItem key={link.name} {...link} isMobile />)}
           </nav>
           <div className="mt-auto pt-6 border-t border-slate-200 dark:border-slate-800">
-            <a href="/commingSoon" className="flex items-center justify-center space-x-2 bg-slate-800 text-white dark:bg-white dark:text-slate-900 px-4 py-3 rounded-lg hover:opacity-90 transition-opacity">
+            <a href="/comming-soon" className="flex items-center justify-center space-x-2 bg-slate-800 text-white dark:bg-white dark:text-slate-900 px-4 py-3 rounded-lg hover:opacity-90 transition-opacity">
               <PlayStoreIcon className="h-6 w-6" />
               <span>Download App</span>
             </a>

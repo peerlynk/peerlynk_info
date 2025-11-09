@@ -8,6 +8,7 @@ import {
   FaEnvelope,
   FaWhatsapp,
 } from "react-icons/fa6";
+import { PlayStoreIcon } from "./IconComponents";
 
 const Footer: React.FC = () => {
   const socialIcons = [
@@ -164,12 +165,10 @@ const Footer: React.FC = () => {
             &copy; {new Date().getFullYear()} Peerlynk. All rights reserved.
           </p>
 
-          <a
-            href="/comingSoon"
-            className="flex items-center space-x-2 bg-gradient-to-r from-brand-primary to-brand-secondary text-black px-4 py-2 rounded-lg font-semibold hover:from-brand-secondary hover:to-brand-primary transition-all duration-300 shadow-md shadow-brand-primary/20"
-          >
-            <span>Download Peerlynk App</span>
-          </a>
+ <a href="/comming-soon" className="flex items-center justify-center space-x-2 bg-slate-800 text-white dark:bg-white dark:text-slate-900 px-4 py-3 rounded-lg hover:opacity-90 transition-opacity">
+              <PlayStoreIcon className="h-6 w-6" />
+              <span>Download App</span>
+            </a>
         </motion.div>
       </div>
     </footer>

@@ -33,7 +33,8 @@ const HeroSection: React.FC = () => (
                         Grow
                     </p>
                     <div className="mt-8 flex justify-center md:justify-start">
-                        <a href="/commingSoon" className="inline-flex items-center justify-center space-x-3 bg-slate-800 text-white dark:bg-white dark:text-slate-900 px-6 py-3 rounded-full hover:opacity-90 transition-all duration-300 text-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105">
+                        <a href="/comming-soon"
+                         className="inline-flex items-center justify-center space-x-3 bg-slate-800 text-white dark:bg-white dark:text-slate-900 px-6 py-3 rounded-full hover:opacity-90 transition-all duration-300 text-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105">
                             <PlayStoreIcon className="h-7 w-7"/>
                             <span>Download App</span>
                         </a>

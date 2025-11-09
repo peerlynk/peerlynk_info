@@ -12,10 +12,10 @@ import CommunityPage from './pages/CommunityPage';
 import PricingPage from './pages/PricingPage';
 import CareersPage from './pages/CareersPage';
 import InternshipPage from './pages/InternshipPage';
-import TeamPage from './pages/TeamPage';
 import SafetyPage from './pages/SafetyPage';
 import CommingSoonPage from './pages/CommingSoonPage';
 import HelpCenterPage from './pages/HelpCenterPage';
+import TeamPage from './pages/TeamPage';
 
 const ScrollRestoration: React.FC = () => {
   const { pathname, hash } = useLocation();
@@ -63,7 +63,7 @@ const App: React.FC = () => {
             <Route path="/privacy" element={<PrivacyPage />} />
             <Route path="/safety" element={<SafetyPage />} />
 
-            <Route path="/commingSoon" element={<CommingSoonPage />} />
+            <Route path="/comming-soon" element={<CommingSoonPage />} />
           </Routes>
         </main>
         <Footer />
