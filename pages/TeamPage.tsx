@@ -46,7 +46,7 @@ const teamMembers: TeamMember[] = [
   {
     name: "Ankit Pal",
     role: "Head of Sales & Marketing",
-    image: "https://res.cloudinary.com/dqppqvblk/image/upload/v1762668962/ankitpal_otv1v7.jpg",
+    image: "https://res.cloudinary.com/dqppqvblk/image/upload/v1762694700/ankitpal2_zpbfcb.jpg",
     bio: "Expert in driving growth and building strategic relationships. Focuses on delivering intelligent marketing solutions that enhance user engagement and platform adoption.",
     gmail: "mailto:ankitpal4057@gmail.com",
     linkedin: "https://www.linkedin.com/in/ankit-pal-309b27269",
