@@ -80,6 +80,11 @@ const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
+                <Link to="/team" className="hover:text-brand-primary">
+                Our Team
+                </Link>
+              </li>
+              <li>
                 <Link to="/careers" className="hover:text-brand-primary">
                   Careers
                 </Link>
