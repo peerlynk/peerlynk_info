@@ -9,7 +9,6 @@ import {
   ValueTransparencyIcon,
   ValueEmpowermentIcon
 } from "../components/IconComponents";
-import { Link } from "react-router-dom";
 
 const AboutPage: React.FC = () => {
   const missionVisionCards = [
@@ -197,12 +196,12 @@ const AboutPage: React.FC = () => {
             >
               Meet the Team
             </a>
-            <Link
+            <a
               href="/contact"
               className="px-6 py-3 rounded-full bg-brand-primary text-black font-semibold hover:opacity-95 shadow-lg transition-all duration-300"
             >
               Contact Us
-            </Link>
+            </a>
           </div>
         </section>
 
