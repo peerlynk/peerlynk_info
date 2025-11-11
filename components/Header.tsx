@@ -14,10 +14,9 @@ const resourcesDropdownLinks = [
 ];
 
 const moreDropdownLinks = [
-  { name: 'Contact', path: '/contact' },
+  { name: 'Contact Us', path: '/contact' },
   { name: 'Careers', path: '/careers' },
   { name: 'Internship', path: '/internship' },
-
 ];
 
 const mobileNavLinks = [...mainNavLinks, ...resourcesDropdownLinks, ...moreDropdownLinks];

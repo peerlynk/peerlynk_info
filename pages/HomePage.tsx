@@ -6,6 +6,7 @@ import {
     ValueConnectionIcon, ValueEmpowermentIcon, ValueTransparencyIcon, ValueInnovationIcon, ValueCommunityIcon, ValueGrowthIcon,
     StudentIcon, TeacherIcon
 } from '../components/IconComponents';
+import LaunchBanner from '@/components/LaunchBanner';
 
 const HeroSection: React.FC = () => (
     <section className="pb-20 pt-10 md:pt-16">
@@ -40,6 +41,7 @@ const HeroSection: React.FC = () => (
                         </a>
                     </div>
                 </div>
+
 
                 {/* Right Side: Logo Icon */}
                 <div className="hidden md:flex justify-center items-center animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
@@ -248,7 +250,9 @@ const HomePage: React.FC = () => {
     return (
         <>
             <HeroSection />
-            <WhyPeerlynkSection />
+
+            <WhyPeerlynkSection />                            <LaunchBanner launchMonth="November 2025" />
+
             <FeaturesSection />
         </>
     );

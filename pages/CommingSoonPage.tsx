@@ -1,6 +1,9 @@
-import React from "react";
+import LaunchBanner from "../components/LaunchBanner";
+import React, { useState } from "react";
 
 const ComingSoonPage: React.FC = () => {
+  const [showBanner, setShowBanner] = useState(true);
+
   const upcomingFeatures = [
     "Auto-grouping for students & teachers",
     "One-to-one & group chats",
@@ -13,6 +16,10 @@ const ComingSoonPage: React.FC = () => {
 
   return (
     <section className="min-h-screen bg-gradient-to-b from-black via-gray-950 to-black text-white relative overflow-hidden py-24 px-6 sm:px-10">
+      {/* Top Launch Banner */}
+      <LaunchBanner launchMonth="November 2025" />
+
+
       {/* Background Glows */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-32 left-1/4 w-96 h-96 bg-brand-primary/10 blur-3xl rounded-full" />
@@ -65,6 +72,20 @@ const ComingSoonPage: React.FC = () => {
           }
           .animate-fade-in-up {
             animation: fadeInUp 0.6s ease forwards;
+          }
+
+          @keyframes fadeInDown {
+            0% {
+              opacity: 0;
+              transform: translateY(-20px);
+            }
+            100% {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+          .animate-fade-in-down {
+            animation: fadeInDown 0.6s ease forwards;
           }
         `}
       </style>
