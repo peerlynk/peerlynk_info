@@ -251,7 +251,8 @@ const HomePage: React.FC = () => {
         <>
             <HeroSection />
 
-            <WhyPeerlynkSection />                            <LaunchBanner launchMonth="November 2025" />
+            <WhyPeerlynkSection />     
+            <LaunchBanner launchMonth="March 2025" />
 
             <FeaturesSection />
         </>
