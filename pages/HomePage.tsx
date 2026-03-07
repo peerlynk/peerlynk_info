@@ -252,7 +252,7 @@ const HomePage: React.FC = () => {
             <HeroSection />
 
             <WhyPeerlynkSection />     
-            <LaunchBanner launchMonth="March 2025" />
+            <LaunchBanner launchMonth="March 2026" />
 
             <FeaturesSection />
         </>
