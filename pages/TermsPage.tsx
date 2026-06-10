@@ -1,14 +1,20 @@
 import React from "react";
 
+interface TermSection {
+  title: string;
+  content: string;
+  list?: (string | React.ReactNode)[];
+}
+
 const TermsPage: React.FC = () => {
-  const terms = [
+  const terms: TermSection[] = [
     {
       title: "1. Introduction",
-      content: `This document is an electronic record in terms of the Information Technology Act, 2000 and the rules thereunder. It does not require any physical or digital signatures. It is published in accordance with Rule 3(1) of the Information Technology (Intermediaries Guidelines) Rules, 2011, requiring publication of the rules, regulations, privacy policy, and Terms of Use for access or usage of https://peerlynk.app (hereinafter referred to as the "Platform").`
+      content: `This document is an electronic record in terms of the Information Technology Act, 2000 and the rules thereunder. It does not require any physical or digital signatures. It is published in accordance with Rule 3(1) of the Information Technology (Intermediaries Guidelines) Rules, 2011, requiring publication of the rules, regulations, privacy policy, and Terms of Use for access or usage of https://peerlynk.com (hereinafter referred to as the "Platform").`
     },
     {
       title: "2. Platform Ownership",
-      content: `The Platform is owned and operated by Peerlynk Technologies Private Limited, a company incorporated under the Companies Act, 2013, with its registered office at Noida, India (hereinafter referred to as "Peerlynk", "we", "us", or "our"). Your use of the Platform and related services constitutes a binding agreement with Peerlynk under these Terms.`
+      content: `The Platform is owned and operated by Peerlynk Technologies Private Limited, a company incorporated under the Companies Act, 2013, with its registered office at Noida, Uttar Pradesh, India (hereinafter referred to as "Peerlynk", "we", "us", or "our"). Your use of the Platform and related services constitutes a binding agreement with Peerlynk under these Terms.`
     },
     {
       title: "3. Acceptance of Terms",
@@ -30,7 +36,7 @@ const TermsPage: React.FC = () => {
     },
     {
       title: "6. Use of Platform and Conduct",
-      content: `Peerlynk is a professional social platform for students, teachers, colleges, and alumni. You agree not to:`,
+      content: `Peerlynk is a professional academic network for students, teachers, colleges, and alumni. You agree not to:`,
       list: [
         "Use the Platform for illegal, harmful, or unethical activities.",
         "Post content that is abusive, misleading, or infringes upon rights.",
@@ -44,7 +50,7 @@ const TermsPage: React.FC = () => {
     },
     {
       title: "8. Premium Services",
-      content: `Peerlynk may offer premium or paid services. All payments are final and non-refundable. Peerlynk does not guarantee specific outcomes or opportunities through paid features. Use paid services at your sole discretion. For billing issues, contact peerlynk@gmail.com.`
+      content: `Peerlynk may offer premium or paid services. All payments are final and non-refundable. Peerlynk does not guarantee specific outcomes or opportunities through paid features. Use paid services at your sole discretion. For billing issues, contact admin@peerlynk.com.`
     },
     {
       title: "9. Privacy and Data Protection",
@@ -81,10 +87,10 @@ const TermsPage: React.FC = () => {
         <span key="email">
           Email:{" "}
           <a
-            href="mailto:peerlynk@gmail.com"
-            className="text-brand-primary hover:underline"
+            href="mailto:admin@peerlynk.com"
+            className="text-brand-primary font-semibold hover:underline"
           >
-            peerlynk@gmail.com
+            admin@peerlynk.com
           </a>
         </span>,
         <span key="address">
@@ -117,22 +123,22 @@ const TermsPage: React.FC = () => {
         {terms.map((term, i) => (
           <div
             key={i}
-            className="p-6 rounded-2xl bg-gray-950 border border-slate-800 hover:border-brand-primary/40 hover:shadow-lg hover:shadow-brand-primary/10 transition-all duration-300"
+            className="p-6 rounded-2xl bg-gray-950 border border-slate-900 hover:border-brand-primary/40 hover:shadow-2xl hover:shadow-brand-primary/5 transition-all duration-300"
           >
-            <h2 className="text-2xl font-semibold text-brand-primary mb-2">{term.title}</h2>
-            <p className="text-slate-400 leading-relaxed mb-3">{term.content}</p>
+            <h2 className="text-2xl font-semibold text-brand-primary mb-3.5">{term.title}</h2>
+            <p className="text-slate-400 leading-relaxed mb-3 text-sm sm:text-base">{term.content}</p>
             {term.list && (
-              <ul className="list-disc list-inside text-slate-400 space-y-1">
+              <ul className="list-disc list-inside text-slate-400 space-y-1.5 text-sm sm:text-base pl-1">
                 {term.list.map((item, idx) => (
-                  <li key={idx}>{item}</li>
+                  <li key={idx} className="marker:text-brand-primary/60">{item}</li>
                 ))}
               </ul>
             )}
           </div>
         ))}
 
-        <p className="text-slate-400 text-center mt-12 leading-relaxed">
-          Violation of these Terms may result in account restrictions, content removal, or termination. Help us keep Peerlynk a respectful and professional platform for all users.
+        <p className="text-slate-500 text-center mt-12 text-sm max-w-2xl mx-auto leading-relaxed border-t border-slate-900/60 pt-8">
+          Violation of these Terms may result in account restrictions, content removal, or termination. Help us keep Peerlynk a respectful, secure, and professional platform for all users.
         </p>
       </section>
     </section>

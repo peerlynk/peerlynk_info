@@ -3,9 +3,9 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { MenuIcon, CloseIcon, PlayStoreIcon, ChevronDownIcon } from './IconComponents';
 
 const mainNavLinks = [
-  { name: 'Home', path: '/' },
-  { name: 'Who We Are', path: '/about' },
-  { name: 'Features', path: '/#features' },
+  { name: 'Home', path: '/', isExternal: false },
+  { name: 'Who We Are', path: '/about', isExternal: false },
+  { name: 'Features', path: '/#features', isExternal: false },
 ];
 
 const resourcesDropdownLinks = [
@@ -14,13 +14,11 @@ const resourcesDropdownLinks = [
 ];
 
 const moreDropdownLinks = [
-  { name: 'Contact Us', path: '/contact' },
-  { name: 'Careers', path: '/careers' },
-  { name: 'Internship', path: '/internship' },
+  { name: 'Contact Us', path: '/contact', isExternal: false },
+  { name: 'Careers', path: 'https://career.peerlynk.com', isExternal: true },
+  { name: 'Peerlynk Labs', path: 'https://labs.peerlynk.com', isExternal: true },
+  { name: 'Founder', path: 'https://founder.peerlynk.com', isExternal: true },
 ];
-
-const mobileNavLinks = [...mainNavLinks, ...resourcesDropdownLinks, ...moreDropdownLinks];
-
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,7 +29,6 @@ const Header: React.FC = () => {
   const resourcesMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Close menus on navigation
     setIsMenuOpen(false);
     setIsMoreMenuOpen(false);
     setIsResourcesMenuOpen(false);
@@ -52,25 +49,29 @@ const Header: React.FC = () => {
     };
   }, []);
 
-  const NavLinkItem: React.FC<{ path: string; name: string; isMobile?: boolean; }> = ({ path, name, isMobile = false }) => {
-    const baseClasses = "font-medium transition-colors hover:text-brand-primary dark:hover:text-brand-secondary";
+  const NavLinkItem: React.FC<{ path: string; name: string; isMobile?: boolean; isExternal?: boolean }> = ({ path, name, isMobile = false, isExternal = false }) => {
+    const baseClasses = "font-medium transition-colors hover:text-brand-primary dark:hover:text-brand-secondary text-slate-700 dark:text-slate-300";
     const mobileClasses = "block text-lg py-3";
     const desktopClasses = "text-xl";
-    const activeClasses = "text-brand-primary dark:text-brand-secondary";
 
-    const isHomePageAnchor = path.startsWith('/#');
-    const currentHash = location.hash;
-    const currentPathname = location.pathname;
-
-    const checkIsActive = (isActive: boolean) => {
-      if (isHomePageAnchor && currentPathname === '/') {
-        return currentHash === path.substring(1);
-      }
-      return isActive;
-    };
+    if (isExternal) {
+      return (
+        <a 
+          href={path} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className={`${baseClasses} ${isMobile ? mobileClasses : desktopClasses}`}
+        >
+          {name}
+        </a>
+      );
+    }
 
     return (
-      <NavLink to={path} className={({ isActive }) => `${baseClasses} ${isMobile ? mobileClasses : desktopClasses} ${checkIsActive(isActive) ? activeClasses : 'text-slate-700 dark:text-slate-300'}`}>
+      <NavLink 
+        to={path} 
+        className={({ isActive }) => `${baseClasses} ${isMobile ? mobileClasses : desktopClasses} ${isActive && !path.startsWith('/#') ? 'text-brand-primary dark:text-brand-secondary' : ''}`}
+      >
         {name}
       </NavLink>
     );
@@ -99,28 +100,15 @@ const Header: React.FC = () => {
                   className="flex items-center space-x-1 text-xl font-medium text-slate-200 hover:text-brand-secondary transition-all duration-300"
                 >
                   <span>Resources</span>
-                  <ChevronDownIcon
-                    className={`h-5 w-5 transition-transform duration-300 ease-in-out ${isResourcesMenuOpen ? "rotate-180" : ""
-                      }`}
-                  />
+                  <ChevronDownIcon className={`h-5 w-5 transition-transform duration-300 ${isResourcesMenuOpen ? "rotate-180" : ""}`} />
                 </button>
 
-                <div
-                  className={`absolute top-full mt-3 w-56 backdrop-blur-md bg-black/50 border border-purple-600/40 rounded-xl shadow-[0_4px_20px_rgba(147,51,234,0.25)] overflow-hidden transform transition-all duration-500 ease-out origin-top ${isResourcesMenuOpen
-                      ? "opacity-100 scale-100 translate-y-0 visible"
-                      : "opacity-0 scale-95 -translate-y-2 invisible"
-                    }`}
-                >
+                <div className={`absolute top-full mt-3 w-56 backdrop-blur-md bg-black/50 border border-purple-600/40 rounded-xl shadow-xl overflow-hidden transform transition-all duration-300 ${isResourcesMenuOpen ? "opacity-100 scale-100 visible" : "opacity-0 scale-95 invisible"}`}>
                   {resourcesDropdownLinks.map((link) => (
                     <NavLink
                       key={link.name}
                       to={link.path}
-                      className={({ isActive }) =>
-                        `block px-5 py-3 text-sm font-medium transition-all duration-300 ${isActive
-                          ? "text-purple-400 bg-purple-950/30"
-                          : "text-slate-200 hover:bg-purple-900/40 hover:shadow-[inset_0_0_10px_rgba(168,85,247,0.4)]"
-                        }`
-                      }
+                      className={({ isActive }) => `block px-5 py-3 text-sm font-medium transition-all ${isActive ? "text-purple-400 bg-purple-950/30" : "text-slate-200 hover:bg-purple-900/40"}`}
                     >
                       {link.name}
                     </NavLink>
@@ -135,45 +123,32 @@ const Header: React.FC = () => {
                   className="flex items-center space-x-1 text-xl font-medium text-slate-200 hover:text-brand-secondary transition-all duration-300"
                 >
                   <span>More</span>
-                  <ChevronDownIcon
-                    className={`h-5 w-5 transition-transform duration-300 ease-in-out ${isMoreMenuOpen ? "rotate-180" : ""
-                      }`}
-                  />
+                  <ChevronDownIcon className={`h-5 w-5 transition-transform duration-300 ${isMoreMenuOpen ? "rotate-180" : ""}`} />
                 </button>
 
-                <div
-                  className={`absolute top-full mt-3 w-56 backdrop-blur-md bg-black/50 border border-purple-600/40 rounded-xl shadow-[0_4px_20px_rgba(147,51,234,0.25)] overflow-hidden transform transition-all duration-500 ease-out origin-top ${isMoreMenuOpen
-                      ? "opacity-100 scale-100 translate-y-0 visible"
-                      : "opacity-0 scale-95 -translate-y-2 invisible"
-                    }`}
-                >
+                <div className={`absolute top-full mt-3 w-56 backdrop-blur-md bg-black/50 border border-purple-600/40 rounded-xl shadow-xl overflow-hidden transform transition-all duration-300 ${isMoreMenuOpen ? "opacity-100 scale-100 visible" : "opacity-0 scale-95 invisible"}`}>
                   {moreDropdownLinks.map((link) => (
-                    <NavLink
-                      key={link.name}
-                      to={link.path}
-                      className={({ isActive }) =>
-                        `block px-5 py-3 text-sm font-medium transition-all duration-300 ${isActive
-                          ? "text-purple-400 bg-purple-950/30"
-                          : "text-slate-200 hover:bg-purple-900/40 hover:shadow-[inset_0_0_10px_rgba(168,85,247,0.4)]"
-                        }`
-                      }
-                    >
-                      {link.name}
-                    </NavLink>
+                    link.isExternal ? (
+                      <a key={link.name} href={link.path} target="_blank" rel="noopener noreferrer" className="block px-5 py-3 text-sm font-medium text-slate-200 hover:bg-purple-900/40 transition-all">
+                        {link.name}
+                      </a>
+                    ) : (
+                      <NavLink key={link.name} to={link.path} className={({ isActive }) => `block px-5 py-3 text-sm font-medium transition-all ${isActive ? "text-purple-400 bg-purple-950/30" : "text-slate-200 hover:bg-purple-900/40"}`}>
+                        {link.name}
+                      </NavLink>
+                    )
                   ))}
                 </div>
               </div>
-
             </nav>
 
             <div className="flex items-center space-x-2">
               <div className="hidden sm:flex items-center space-x-2">
                 <a
-                  href="/comming-soon"
-                  className="flex items-center space-x-2 bg-white text-slate-900 px-5 py-2.5 rounded-full hover:opacity-90 transition-all duration-300 text-base font-semibold shadow-md hover:shadow-lg transform hover:scale-105"
+                  href="https://play.google.com/store/apps/details?id=com.peerlynk.network"
+                  target="_blank"
                   rel="noopener noreferrer"
-                  // target="_blank"
-                  data-analytics="get-app-header-click"
+                  className="flex items-center space-x-2 bg-white text-slate-900 px-5 py-2.5 rounded-full hover:opacity-90 transition-all duration-300 text-base font-semibold shadow-md transform hover:scale-105"
                 >
                   <PlayStoreIcon className="h-6 w-6" />
                   <span>Download App</span>
@@ -182,9 +157,7 @@ const Header: React.FC = () => {
               <div className="lg:hidden">
                 <button
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
-                  className="inline-flex items-center justify-center p-2 rounded-md text-slate-500 dark:text-slate-400 hover:bg-slate-300 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-primary"
-                  aria-expanded={isMenuOpen}
-                  aria-label="Open main menu"
+                  className="inline-flex items-center justify-center p-2 rounded-md text-slate-500 hover:bg-slate-800"
                 >
                   <MenuIcon className="block h-6 w-6" />
                 </button>
@@ -197,21 +170,19 @@ const Header: React.FC = () => {
       {/* Mobile Menu Drawer */}
       <div className={`fixed inset-0 z-40 transform transition-transform duration-300 ease-in-out lg:hidden ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="absolute inset-0 bg-black/40" onClick={() => setIsMenuOpen(false)}></div>
-        <div className="relative z-50 flex flex-col h-full w-80 max-w-[calc(100%-3rem)] ml-auto bg-slate-100 dark:bg-gray-950 p-6">
+        <div className="relative z-50 flex flex-col h-full w-80 max-w-[calc(100%-3rem)] ml-auto bg-gray-950 p-6 border-l border-slate-900">
           <div className="absolute top-4 right-4">
-            <button
-              onClick={() => setIsMenuOpen(false)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-slate-500 dark:text-slate-400 hover:bg-slate-300 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-primary"
-              aria-label="Close menu"
-            >
+            <button onClick={() => setIsMenuOpen(false)} className="p-2 text-slate-400 hover:bg-slate-800 rounded-md">
               <CloseIcon className="block h-6 w-6" />
             </button>
           </div>
           <nav className="flex flex-col space-y-2 mt-10 flex-grow">
-            {mobileNavLinks.map(link => <NavLinkItem key={link.name} {...link} isMobile />)}
+            {mainNavLinks.map(link => <NavLinkItem key={link.name} {...link} isMobile />)}
+            {resourcesDropdownLinks.map(link => <NavLinkItem key={link.name} {...link} isMobile />)}
+            {moreDropdownLinks.map(link => <NavLinkItem key={link.name} {...link} isMobile />)}
           </nav>
-          <div className="mt-auto pt-6 border-t border-slate-200 dark:border-slate-800">
-            <a href="/comming-soon" className="flex items-center justify-center space-x-2 bg-slate-800 text-white dark:bg-white dark:text-slate-900 px-4 py-3 rounded-lg hover:opacity-90 transition-opacity">
+          <div className="mt-auto pt-6 border-t border-slate-800">
+            <a href="https://play.google.com/store/apps/details?id=com.peerlynk.network" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center space-x-2 bg-white text-slate-900 px-4 py-3 rounded-lg font-semibold">
               <PlayStoreIcon className="h-6 w-6" />
               <span>Download App</span>
             </a>

@@ -25,11 +25,11 @@ const PrivacyPage: React.FC = () => {
         {/* Content Section */}
         <section className="mt-16 max-w-4xl mx-auto space-y-8 animate-fade-in-up">
           <div className="p-8 rounded-2xl bg-gray-950 border border-slate-800 hover:border-brand-primary/40 hover:shadow-lg hover:shadow-brand-primary/10 transition-all duration-300 backdrop-blur-lg">
-            <p className="text-sm text-slate-500 mb-4">
-              Last updated: {new Date().toLocaleDateString()}
+            <p className="text-sm text-slate-500 mb-4 font-semibold">
+              Last updated: {new Date().toLocaleString('default', { month: 'long' })} {new Date().getFullYear()}
             </p>
 
-            <p>
+            <p className="text-slate-300 leading-relaxed">
               <strong>Peerlynk</strong> (“We”, “Our”, “Us”) is committed to safeguarding your privacy 
               and ensuring that your personal information is handled responsibly and securely. 
               This Privacy Policy outlines how we collect, use, store, and protect your data when you 
@@ -37,7 +37,7 @@ const PrivacyPage: React.FC = () => {
             </p>
           </div>
 
-          {/* Sections */}
+          {/* Sections Matrix */}
           {[
             {
               title: "1. Introduction",
@@ -51,7 +51,7 @@ const PrivacyPage: React.FC = () => {
                   <p className="mt-2">
                     Peerlynk is designed to connect students, teachers, alumni, and institutions 
                     for professional collaboration and learning. We understand the sensitivity 
-                    of your data and strive to maintain transparency and trust.
+                    of your data and strive to maintain transparency and absolute trust.
                   </p>
                 </>
               ),
@@ -60,12 +60,13 @@ const PrivacyPage: React.FC = () => {
               title: "2. Information We Collect",
               content: (
                 <>
+                  <p className="mb-2">We collect the following categories of data to provide our services:</p>
                   <ul className="list-disc list-inside text-slate-400 space-y-1">
-                    <li>Personal details such as name, email, role, institution, and contact number</li>
-                    <li>Account data such as username, password, and preferences</li>
-                    <li>Usage data like IP address, device type, OS, browser, and access times</li>
-                    <li>Content data like posts, comments, messages, and profile details</li>
-                    <li>Technical information collected via cookies and analytics tools</li>
+                    <li>Personal details such as name, email address, academic role, institution, and contact configurations.</li>
+                    <li>Account credentials including secure authentication keys, username, and system preferences.</li>
+                    <li>Usage data like device IP addresses, operating system types, unique device identifiers, and platform access logs.</li>
+                    <li>User-generated content (UGC) like feeds, project portfolio descriptions, chat communications, and comment tracks.</li>
+                    <li>Technical metadata harvested securely via temporary cookies and essential performance analytics layers.</li>
                   </ul>
                 </>
               ),
@@ -74,13 +75,13 @@ const PrivacyPage: React.FC = () => {
               title: "3. How We Use Your Information",
               content: (
                 <>
-                  <p>We use your data to:</p>
-                  <ul className="list-disc list-inside text-slate-400 space-y-1">
-                    <li>Provide and personalize your Peerlynk experience</li>
-                    <li>Enable core platform features such as messaging, posting, and grouping</li>
-                    <li>Improve our services through analytics and user feedback</li>
-                    <li>Communicate with you regarding support, security, or promotional updates</li>
-                    <li>Comply with legal requirements and maintain platform safety</li>
+                  <p>We process your metrics to:</p>
+                  <ul className="list-disc list-inside text-slate-400 space-y-1 mt-2">
+                    <li>Provide, maintain, and dynamically personalize your academic Peerlynk experience.</li>
+                    <li>Enable core operational social utilities including continuous group-syncing, interactive feed delivery, and direct peer messaging.</li>
+                    <li>Analyze platform performance to squash bugs and scale architectural capabilities.</li>
+                    <li>Dispatch mandatory trust notifications, platform security updates, and critical system support logs.</li>
+                    <li>Enforce community safety guidelines, preserve infrastructure sanity, and fulfill legal compliance bounds.</li>
                   </ul>
                 </>
               ),
@@ -90,13 +91,10 @@ const PrivacyPage: React.FC = () => {
               content: (
                 <>
                   <p>
-                    We do not sell or rent your personal data. However, your information may be 
-                    shared with trusted third-party service providers who assist in operating 
-                    the platform under strict confidentiality agreements.
+                    We strictly maintain a zero-monetization policy on data; we never sell, lease, or distribute your personal metrics to third-party ad brokers. Your data is only processed via encrypted micro-service infrastructure pipelines under stringent confidentiality regulations.
                   </p>
                   <p className="mt-2">
-                    We may also disclose your information when required by law, legal process, 
-                    or government request, or to protect Peerlynk’s rights and users’ safety.
+                    We reserve the right to securely disclose data subsets if mandated explicitly by statutory judicial decree, local law enforcement frameworks, or national child security prevention agencies (such as NCMEC integration mandates).
                   </p>
                 </>
               ),
@@ -105,10 +103,7 @@ const PrivacyPage: React.FC = () => {
               title: "5. Data Security",
               content: (
                 <p>
-                  We adopt industry-standard encryption, secure servers, and restricted 
-                  access protocols to protect your information. Despite our best efforts, 
-                  no data transmission over the internet can be guaranteed as fully secure. 
-                  In case of a data breach, we will promptly inform affected users as required by law.
+                  We utilize industry-standard TLS/SSL transit encryption layer, securely compartmentalized database architectures, and rigid role-based access protocols. While we implement structural firewalls to safeguard data assets, no internet-facing architecture is absolutely ironclad. In the improbable event of an infrastructure threat, we guarantee clear user alerts within statutory timelines.
                 </p>
               ),
             },
@@ -116,30 +111,27 @@ const PrivacyPage: React.FC = () => {
               title: "6. Cookies",
               content: (
                 <p>
-                  Peerlynk uses cookies to analyze traffic, remember preferences, and enhance 
-                  user experience. You can choose to disable cookies via browser settings, 
-                  but this may affect certain functionalities of the platform.
+                  Peerlynk deploys standard functional cookies to preserve user preferences, maintain state tokens, and map core analytics. You retain complete authority to block or flush state cookies through local browser profiles, though doing so might cause state validation glitches on certain web modules.
                 </p>
               ),
             },
             {
-              title: "7. Your Rights",
+              title: "7. Your Rights & Account Deletion Policy",
               content: (
                 <>
-                  <p>You have the right to:</p>
+                  <p>You possess complete rights to access, amend, modify, or restrict processing vectors of your personal metrics. Specifically:</p>
                   <ul className="list-disc list-inside text-slate-400 space-y-1 mt-2">
-                    <li>Access and update your personal data</li>
-                    <li>Request deletion of your account and information</li>
-                    <li>Withdraw consent for data processing at any time</li>
-                    <li>Request clarification or a copy of stored information</li>
+                    <li><strong>Right to Deletion:</strong> You have the absolute right to terminate your account and erase all associated digital footprints.</li>
+                    <li>Users can trigger permanent account and data erasure instantly from within the Peerlynk Mobile App via <strong>Settings &gt; Account Control &gt; Delete Account</strong>.</li>
+                    <li>Alternatively, users can submit an absolute deletion request externally through our dedicated web form system without reinstalling the app platform.</li>
                   </ul>
-                  <p className="mt-2">
-                    To exercise these rights, contact us at{" "}
+                  <p className="mt-4">
+                    To invoke any privacy rights or coordinate manual data flushes, write directly to our automated processing gateway at{" "}
                     <a
-                      href="mailto:peerlynk@gmail.com"
-                      className="text-brand-primary hover:underline"
+                      href="mailto:admin@peerlynk.com"
+                      className="text-brand-primary font-semibold hover:underline"
                     >
-                      peerlynk@gmail.com
+                      admin@peerlynk.com
                     </a>
                     .
                   </p>
@@ -150,9 +142,7 @@ const PrivacyPage: React.FC = () => {
               title: "8. Third-Party Links",
               content: (
                 <p>
-                  Peerlynk may contain links to third-party websites or services. We are not 
-                  responsible for their privacy practices, and we encourage you to review 
-                  the policies of any external sites you visit.
+                  Our web spaces might render structural references or links directing to outside domains. Peerlynk carries no governance or accountability over the data processing habits or terms of external publishers. We advise evaluating the privacy manifestoes of any external channels you access.
                 </p>
               ),
             },
@@ -160,9 +150,7 @@ const PrivacyPage: React.FC = () => {
               title: "9. Changes to This Policy",
               content: (
                 <p>
-                  Peerlynk reserves the right to update this Privacy Policy at any time. 
-                  Changes will be posted on this page, and your continued use of the platform 
-                  constitutes acceptance of the updated terms.
+                  We retain the sovereign authority to update our privacy frameworks to keep pace with changing compliance codes. Structural amendments will automatically go live upon being posted on this exact tracking route. Your active session status on Peerlynk past policy modifications implies agreement with the rewritten updates.
                 </p>
               ),
             },
@@ -171,24 +159,23 @@ const PrivacyPage: React.FC = () => {
               content: (
                 <>
                   <p>
-                    If you have any questions, concerns, or complaints about our Privacy Policy 
-                    or data handling, you may reach out to our Grievance Officer:
+                    For queries, legal investigations, data security complaints, or compliance audits, direct your communication to our central processing desk:
                   </p>
-                  <div className="mt-3 text-slate-400">
-                    {/* <p>
-                      <strong>Name:</strong> Peerlynk Data Protection Officer
-                    </p> */}
+                  <div className="mt-3 text-slate-400 space-y-1 bg-slate-900/40 p-4 rounded-xl border border-slate-900">
+                    <p>
+                      <strong>Operations Hub:</strong> Peerlynk Privacy & Trust Division
+                    </p>
                     <p>
                       <strong>Email:</strong>{" "}
                       <a
-                        href="mailto:peerlynk@gmail.com"
-                        className="text-brand-primary hover:underline"
+                        href="mailto:admin@peerlynk.com"
+                        className="text-brand-primary hover:underline font-semibold"
                       >
-                        peerlynk@gmail.com
+                        admin@peerlynk.com
                       </a>
                     </p>
                     <p>
-                      <strong>Address:</strong> Noida, Uttar Pradesh, India
+                      <strong>Jurisdiction Core:</strong> Noida, Uttar Pradesh, India
                     </p>
                   </div>
                 </>
@@ -197,20 +184,20 @@ const PrivacyPage: React.FC = () => {
           ].map((section, i) => (
             <div
               key={i}
-              className="p-6 rounded-2xl bg-gray-950 border border-slate-800 hover:border-brand-primary/40 hover:shadow-lg hover:shadow-brand-primary/10 transition-all duration-300"
+              className="p-6 rounded-2xl bg-gray-950 border border-slate-900 hover:border-brand-primary/40 hover:shadow-2xl hover:shadow-brand-primary/5 transition-all duration-300"
             >
               <h2 className="text-2xl font-semibold text-brand-primary mb-3">
                 {section.title}
               </h2>
-              <div className="text-slate-400 leading-relaxed">{section.content}</div>
+              <div className="text-slate-400 text-sm sm:text-base leading-relaxed">{section.content}</div>
             </div>
           ))}
         </section>
 
         {/* Footer tagline */}
-        <footer className="mt-24 text-center text-slate-400 animate-fade-in-up">
+        <footer className="mt-24 text-center text-slate-500 animate-fade-in-up text-sm border-t border-slate-900/60 pt-8">
           <p className="max-w-2xl mx-auto">
-            Peerlynk — empowering students, educators, and institutions through secure and connected learning.
+            Peerlynk Privacy Mesh &copy; {new Date().getFullYear()} — Empowering students, educators, and institutions through secure and connected learning.
           </p>
         </footer>
       </div>

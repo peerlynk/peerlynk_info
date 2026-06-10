@@ -37,17 +37,17 @@ const ContactPage: React.FC = () => {
 
         {/* Footer Info */}
         <footer className="mt-16 animate-fade-in-up text-slate-400">
-            <p className="mt-6 text-center text-slate-400 text-sm">
-    Have questions? Contact us at{" "}
-    <a
-      href="mailto:peerlynk@gmail.com"
-      className="text-brand-secondary hover:underline"
-    >
-      peerlynk@gmail.com
-    </a>
-  </p>
-          <p className="mt-4 max-w-xl mx-auto">
-            Peerlynk — connecting learners with respect, collaboration, and opportunity.
+          <p className="text-center text-slate-400 text-sm sm:text-base">
+            Have questions? Contact us at{" "}
+            <a
+              href="mailto:admin@peerlynk.com"
+              className="text-brand-secondary font-semibold hover:underline transition-all duration-200"
+            >
+              admin@peerlynk.com
+            </a>
+          </p>
+          <p className="mt-4 max-w-xl mx-auto text-xs sm:text-sm text-slate-500">
+            Peerlynk &copy; {new Date().getFullYear()} — connecting learners with respect, collaboration, and opportunity.
           </p>
         </footer>
       </div>

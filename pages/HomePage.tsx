@@ -12,7 +12,7 @@ const HeroSection: React.FC = () => (
     <section className="pb-20 pt-10 md:pt-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-20">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
-                             {/* Small screen: Logo above left content */}
+                {/* Small screen: Logo above left content */}
                 <div className="flex justify-center md:hidden mb-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                     <div className="relative w-40 h-40 sm:w-52 sm:h-52">
                         <div className="absolute inset-0 bg-brand-primary/20 dark:bg-brand-secondary/20 rounded-full blur-3xl opacity-70"></div>
@@ -25,7 +25,7 @@ const HeroSection: React.FC = () => (
                 </div>
                 {/* Left Side: Content */}
                 <div className="text-center md:text-left animate-fade-in-up">
-                    <h1 className="text-5xl sm:text-5xl lg:text-6xl font-bold  leading-tight tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary pb-4">
+                    <h1 className="text-5xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary pb-4">
                         See what’s happening on campus right now.
                     </h1>
                     <p className="mt-6 text-lg sm:text-xl leading-relaxed text-slate-600 dark:text-slate-400 max-w-xl mx-auto md:mx-0 font-semibold tracking-wide">
@@ -34,27 +34,29 @@ const HeroSection: React.FC = () => (
                         Grow
                     </p>
                     <div className="mt-8 flex justify-center md:justify-start">
-                        <a href="/comming-soon"
-                         className="inline-flex items-center justify-center space-x-3 bg-slate-800 text-white dark:bg-white dark:text-slate-900 px-6 py-3 rounded-full hover:opacity-90 transition-all duration-300 text-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105">
+                        <a 
+                            href="https://play.google.com/store/apps/details?id=com.peerlynk.network"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center justify-center space-x-3 bg-slate-800 text-white dark:bg-white dark:text-slate-900 px-6 py-3 rounded-full hover:opacity-90 transition-all duration-300 text-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105"
+                        >
                             <PlayStoreIcon className="h-7 w-7"/>
                             <span>Download App</span>
                         </a>
                     </div>
                 </div>
 
-
                 {/* Right Side: Logo Icon */}
                 <div className="hidden md:flex justify-center items-center animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                    <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
                         {/* Glow effect */}
                         <div className="absolute inset-0 bg-brand-primary/20 dark:bg-brand-secondary/20 rounded-full blur-3xl opacity-70"></div>
-                        {/* The Icon */}
-   
+                        
                         <img
-  src="https://res.cloudinary.com/dqppqvblk/image/upload/v1762668961/peerlynk-icon_ksgdfk.png"
-  alt="Peerlynk Illustration"
-  className="relative w-full h-full object-contain rounded-full drop-shadow-[0_0_15px_rgba(56,189,248,0.3)] dark:drop-shadow-[0_0_20px_rgba(255,0,255,0.3)]"
-/>
+                            src="https://res.cloudinary.com/dqppqvblk/image/upload/v1762668961/peerlynk-icon_ksgdfk.png"
+                            alt="Peerlynk Illustration"
+                            className="relative w-full h-full object-contain rounded-full drop-shadow-[0_0_15px_rgba(56,189,248,0.3)] dark:drop-shadow-[0_0_20px_rgba(255,0,255,0.3)]"
+                        />
                    </div>
                 </div>
             </div>
@@ -94,42 +96,41 @@ const WhyPeerlynkSection: React.FC = () => (
             </div>
 
             {/* Mission & Vision Cards */}
-<div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-  {[
-    {
-      icon: <MissionIcon className="h-8 w-8" />,
-      title: "Our Mission",
-      desc: "To empower every student with a smart, connected, and opportunity-driven platform where learning meets networking.",
-      color: "primary",
-    },
-    {
-      icon: <VisionIcon className="h-8 w-8" />,
-      title: "Our Vision",
-      desc: "To become the world’s most trusted academic networking platform, where every student can learn, showcase, and grow.",
-      color: "secondary",
-    },
-  ].map((card, index) => {
-    const borderColor = card.color === "primary" ? "border-brand-primary/20" : "border-brand-secondary/20";
-    const hoverBorder = card.color === "primary" ? "hover:border-brand-primary/50" : "hover:border-brand-secondary/50";
-    const hoverShadow = card.color === "primary" ? "hover:shadow-2xl hover:shadow-brand-primary/20" : "hover:shadow-2xl hover:shadow-brand-secondary/20";
-    const iconBg = card.color === "primary" ? "bg-brand-primary/10 text-brand-primary" : "bg-brand-secondary/10 text-brand-secondary";
+            <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {[
+                {
+                  icon: <MissionIcon className="h-8 w-8" />,
+                  title: "Our Mission",
+                  desc: "To empower every student with a smart, connected, and opportunity-driven platform where learning meets networking.",
+                  color: "primary",
+                },
+                {
+                  icon: <VisionIcon className="h-8 w-8" />,
+                  title: "Our Vision",
+                  desc: "To become the world’s most trusted academic networking platform, where every student can learn, showcase, and grow.",
+                  color: "secondary",
+                },
+              ].map((card, index) => {
+                const borderColor = card.color === "primary" ? "border-brand-primary/20" : "border-brand-secondary/20";
+                const hoverBorder = card.color === "primary" ? "hover:border-brand-primary/50" : "hover:border-brand-secondary/50";
+                const hoverShadow = card.color === "primary" ? "hover:shadow-2xl hover:shadow-brand-primary/20" : "hover:shadow-2xl hover:shadow-brand-secondary/20";
+                const iconBg = card.color === "primary" ? "bg-brand-primary/10 text-brand-primary" : "bg-brand-secondary/10 text-brand-secondary";
 
-    return (
-      <div
-        key={index}
-        className={`p-8 rounded-2xl bg-gray-950 ${borderColor} shadow-lg flex flex-col items-center text-center animate-fade-in-up transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 ${hoverBorder} ${hoverShadow}`}
-        style={{ animationDelay: `${0.1 * (index + 1)}s` }}
-      >
-        <div className={`flex-shrink-0 w-14 h-14 flex items-center justify-center ${iconBg} rounded-full mb-4`}>
-          {card.icon}
-        </div>
-        <h3 className="text-2xl font-semibold text-white">{card.title}</h3>
-        <p className="mt-2 text-slate-400">{card.desc}</p>
-      </div>
-    );
-  })}
-</div>
-
+                return (
+                  <div
+                    key={index}
+                    className={`p-8 rounded-2xl bg-gray-950 ${borderColor} shadow-lg flex flex-col items-center text-center animate-fade-in-up transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 ${hoverBorder} ${hoverShadow}`}
+                    style={{ animationDelay: `${0.1 * (index + 1)}s` }}
+                  >
+                    <div className={`flex-shrink-0 w-14 h-14 flex items-center justify-center ${iconBg} rounded-full mb-4`}>
+                      {card.icon}
+                    </div>
+                    <h3 className="text-2xl font-semibold text-white">{card.title}</h3>
+                    <p className="mt-2 text-slate-400">{card.desc}</p>
+                  </div>
+                );
+              })}
+            </div>
 
             {/* Core Values */}
             <div className="mt-20 max-w-5xl mx-auto">
@@ -185,9 +186,6 @@ const WhyPeerlynkSection: React.FC = () => (
     </section>
 );
 
-
-
-
 const platformFeatures = [
     {
         icon: <InsightIcon className="h-8 w-8" />,
@@ -225,9 +223,9 @@ const FeaturesSection: React.FC = () => (
     <section id="features" className="py-20 bg-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-20">
             <div className="text-center mb-16 max-w-3xl mx-auto">
-                <h2 className="text-3xl lg:text-4xl font-bold tracking-tight bg-gradient-to-r from-brand-primary to-brand-secondary text-transparent bg-clip-text py-10 ">Everything You Need to Succeed</h2>
+                <h2 className="text-3xl lg:text-4xl font-bold tracking-tight bg-gradient-to-r from-brand-primary to-brand-secondary text-transparent bg-clip-text py-10">Everything You Need to Succeed</h2>
                 <p className="mt-4 text-lg text-slate-400">
-                   Peerlynk is more than a network; it's a comprehensive toolkit designed to amplify your academic journey and launch your professional career.
+                    Peerlynk is more than a network; it's a comprehensive toolkit designed to amplify your academic journey and launch your professional career.
                 </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -245,14 +243,14 @@ const FeaturesSection: React.FC = () => (
     </section>
 );
 
-
 const HomePage: React.FC = () => {
     return (
         <>
             <HeroSection />
-
             <WhyPeerlynkSection />     
-            <LaunchBanner launchMonth="March 2026" />
+            
+            {/* Banner updated to dynamic deployment status for current operations */}
+            <LaunchBanner launchMonth="Live Now" />
 
             <FeaturesSection />
         </>

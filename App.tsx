@@ -16,6 +16,7 @@ import SafetyPage from './pages/SafetyPage';
 import CommingSoonPage from './pages/CommingSoonPage';
 import HelpCenterPage from './pages/HelpCenterPage';
 import TeamPage from './pages/TeamPage';
+import ChildSafetyPage from './pages/ChildSafetyPage';
 
 const ScrollRestoration: React.FC = () => {
   const { pathname, hash } = useLocation();
@@ -62,6 +63,8 @@ const App: React.FC = () => {
             <Route path="/terms" element={<TermsPage />} />
             <Route path="/privacy" element={<PrivacyPage />} />
             <Route path="/safety" element={<SafetyPage />} />
+            {/* ChildSafetyPage */}
+            <Route path="/Child-safety" element={<ChildSafetyPage />} />
 
             <Route path="/comming-soon" element={<CommingSoonPage />} />
 

@@ -10,7 +10,7 @@ const testimonials = [
   {
     quote:
       "The collaborative environment at Peerlynk is amazing. I had the chance to work on user-facing features and see my code go live. It was a challenging yet rewarding internship that prepared me for my career.",
-    name: "Akash Kumar ",
+    name: "Akash Kumar",
     role: "Product Design Intern, Summer 2025",
   },
 ];
@@ -26,8 +26,8 @@ const InternshipPage: React.FC = () => {
 
       <div className="container mx-auto px-6 lg:px-20 py-20">
         {/* Header Section */}
-        <header className="text-center max-w-4xl mx-auto animate-fade-in-up ">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-brand-primary to-brand-secondary text-transparent bg-clip-text ">
+        <header className="text-center max-w-4xl mx-auto animate-fade-in-up">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-brand-primary to-brand-secondary text-transparent bg-clip-text">
             Peerlynk Internship Program
           </h1>
           <p className="mt-6 text-lg sm:text-xl text-slate-300 leading-relaxed">
@@ -60,7 +60,7 @@ const InternshipPage: React.FC = () => {
             ].map((item, index) => (
               <div
                 key={index}
-                className="p-8 rounded-2xl bg-gray-950 border border-slate-800 hover:border-brand-primary/50 hover:shadow-lg hover:shadow-brand-primary/10 transition-all duration-300 text-center"
+                className="p-8 rounded-2xl bg-gray-950 border border-slate-900 hover:border-brand-primary/50 hover:shadow-lg hover:shadow-brand-primary/10 transition-all duration-300 text-center"
               >
                 <h3 className="text-xl font-semibold text-brand-primary mb-3">
                   {item.title}
@@ -81,7 +81,7 @@ const InternshipPage: React.FC = () => {
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="p-8 rounded-2xl bg-gray-950 border border-slate-800 hover:border-brand-secondary/40 transition-all duration-300"
+                className="p-8 rounded-2xl bg-gray-950 border border-slate-900 hover:border-brand-secondary/40 transition-all duration-300"
               >
                 <blockquote className="text-slate-300 italic leading-relaxed">
                   “{testimonial.quote}”
@@ -96,39 +96,36 @@ const InternshipPage: React.FC = () => {
         </section>
 
         {/* Apply Section */}
-{/* Apply Section */}
-<section className="mt-24 max-w-4xl mx-auto animate-fade-in-up">
-  <p className="text-slate-400 text-center max-w-2xl mx-auto leading-relaxed mb-6">
-    Ready to make an impact? Fill out the form below to apply for our next internship cohort.
-  </p>
-  <div className="flex justify-center">
-    <a
-      href="https://forms.gle/L6jc1ArpU32sciYv9"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-brand-primary to-brand-secondary text-white font-semibold rounded-xl shadow-lg hover:scale-105 transition-transform duration-300"
-    >
-      Apply Now
-    </a>
-  </div>
+        <section className="mt-24 max-w-4xl mx-auto animate-fade-in-up">
+          <p className="text-slate-400 text-center max-w-2xl mx-auto leading-relaxed mb-6">
+            Ready to make an impact? Access our recruitment matrix or apply for our next upcoming internship cohort directly via our career ecosystem.
+          </p>
+          <div className="flex justify-center">
+            <a
+              href="https://career.peerlynk.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-8 py-3.5 bg-gradient-to-r from-brand-primary to-brand-secondary text-white font-semibold rounded-full shadow-xl hover:scale-105 transition-all duration-300 text-sm sm:text-base"
+            >
+              Apply via Career Hub
+            </a>
+          </div>
 
-  <p className="mt-6 text-center text-slate-400 text-sm">
-    Have questions? Contact us at{" "}
-    <a
-      href="mailto:peerlynk@gmail.com"
-      className="text-brand-secondary hover:underline"
-    >
-      peerlynk@gmail.com
-    </a>
-  </p>
-</section>
+          <p className="mt-8 text-center text-slate-400 text-sm sm:text-base">
+            Have operational questions? Contact us at{" "}
+            <a
+              href="mailto:admin@peerlynk.com"
+              className="text-brand-secondary font-semibold hover:underline transition-all duration-200"
+            >
+              career@peerlynk.com
+            </a>
+          </p>
+        </section>
 
-
-        {/* Footer */}
-        <footer className="mt-24 text-center text-slate-500 animate-fade-in-up">
+        {/* System Footer Info */}
+        <footer className="mt-24 text-center text-slate-500 animate-fade-in-up border-t border-slate-900/60 pt-8 text-xs sm:text-sm">
           <p className="max-w-2xl mx-auto">
-            Peerlynk — empowering students to learn, connect, and grow through 
-            meaningful real-world experiences.
+            Peerlynk Internships &copy; {new Date().getFullYear()} — empowering students to learn, connect, and grow through meaningful real-world campus engineering.
           </p>
         </footer>
       </div>

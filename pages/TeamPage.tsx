@@ -1,5 +1,5 @@
 import React from "react";
-import { FaEnvelope, FaInstagram, FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import { FaEnvelope, FaInstagram, FaLinkedin, FaXTwitter, FaGlobe } from "react-icons/fa6";
 
 interface TeamMember {
   name: string;
@@ -10,6 +10,7 @@ interface TeamMember {
   linkedin?: string;
   instagram?: string;
   x?: string; // X (Twitter)
+  portfolio?: string; // Added custom portfolio routing support
 }
 
 const teamMembers: TeamMember[] = [
@@ -22,6 +23,7 @@ const teamMembers: TeamMember[] = [
     linkedin: "https://www.linkedin.com/in/dhruv-pal-59b584253",
     instagram: "https://www.instagram.com/rock._dhruv_",
     x: "https://x.com/Dhruv_Pal0",
+    portfolio: "https://founder.peerlynk.com", // Sub-domain route added
   },
   {
     name: "Diwakar Singh",
@@ -39,7 +41,7 @@ const teamMembers: TeamMember[] = [
     image: "https://res.cloudinary.com/dqppqvblk/image/upload/v1762668962/akashKumar_jyzzn5.jpg",
     bio: "Web full-stack developer skilled in designing seamless and engaging user experiences. Strong background in DSA and creating scalable, maintainable applications.",
     gmail: "mailto:",
-    linkedin: "https://www.linkedin.com/",
+    linkedin: "https://www.linkedin.com/in/akash-kumar-579301286/",
     instagram: "https://www.instagram.com/rajput_akash_919/",
     x: "https://x.com/",
   },
@@ -69,7 +71,7 @@ const TeamPage: React.FC = () => {
           educational world.
         </p>
 
-        {/* Team Members */}
+        {/* Team Members Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {teamMembers.map((member, index) => (
             <div
@@ -90,11 +92,26 @@ const TeamPage: React.FC = () => {
               />
               <h3 className="text-xl font-semibold">{member.name}</h3>
               <p className="text-brand-primary font-medium mb-2">{member.role}</p>
-              <p className="text-slate-400 text-sm leading-relaxed mb-4">{member.bio}</p>
+              <p className="text-slate-400 text-sm leading-relaxed mb-4 min-h-[80px]">{member.bio}</p>
 
-              {/* Social Icons */}
-              <div className="flex justify-center gap-5 mt-4">
-                {member.gmail && (
+              {/* Social Icons Mapping */}
+              <div className="flex justify-center gap-4 mt-4 flex-wrap">
+                {/* Portfolio Redirection (High Priority) */}
+                {member.portfolio && (
+                  <a
+                    href={member.portfolio}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Visit Portfolio"
+                    className="p-2 rounded-full bg-brand-primary/10 border border-brand-primary/40 text-brand-primary
+                      hover:bg-brand-primary hover:text-black hover:shadow-brand-primary/40 
+                      transition-all duration-300 hover:scale-110"
+                  >
+                    <FaGlobe size={18} />
+                  </a>
+                )}
+
+                {member.gmail && member.gmail !== "mailto:" && (
                   <a
                     href={member.gmail}
                     target="_blank"
@@ -103,10 +120,10 @@ const TeamPage: React.FC = () => {
                       hover:border-brand-primary hover:text-brand-primary hover:shadow-brand-primary/30 
                       transition-all duration-300 hover:scale-110"
                   >
-                    <FaEnvelope size={20} />
+                    <FaEnvelope size={18} />
                   </a>
                 )}
-                {member.linkedin && (
+                {member.linkedin && member.linkedin !== "https://www.linkedin.com/" && (
                   <a
                     href={member.linkedin}
                     target="_blank"
@@ -115,10 +132,10 @@ const TeamPage: React.FC = () => {
                       hover:border-brand-primary hover:text-brand-primary hover:shadow-brand-primary/30 
                       transition-all duration-300 hover:scale-110"
                   >
-                    <FaLinkedin size={20} />
+                    <FaLinkedin size={18} />
                   </a>
                 )}
-                {member.x && (
+                {member.x && member.x !== "https://x.com/" && (
                   <a
                     href={member.x}
                     target="_blank"
@@ -127,10 +144,10 @@ const TeamPage: React.FC = () => {
                       hover:border-brand-primary hover:text-brand-primary hover:shadow-brand-primary/30 
                       transition-all duration-300 hover:scale-110"
                   >
-                    <FaXTwitter size={20} />
+                    <FaXTwitter size={18} />
                   </a>
                 )}
-                {member.instagram && (
+                {member.instagram && member.instagram !== "https://www.instagram.com/" && (
                   <a
                     href={member.instagram}
                     target="_blank"
@@ -139,7 +156,7 @@ const TeamPage: React.FC = () => {
                       hover:border-brand-primary hover:text-brand-primary hover:shadow-brand-primary/30 
                       transition-all duration-300 hover:scale-110"
                   >
-                    <FaInstagram size={20}  />
+                    <FaInstagram size={18} />
                   </a>
                 )}
               </div>
@@ -147,11 +164,11 @@ const TeamPage: React.FC = () => {
           ))}
         </div>
 
-        {/* CTA Button */}
+        {/* Mission Footprint CTA */}
         <div className="mt-16">
           <a
             href="/contact"
-            className="px-8 py-3 rounded-full bg-brand-primary text-black font-semibold hover:opacity-95 shadow-lg hover:shadow-2xl hover:shadow-brand-primary/20 transition-all duration-300"
+            className="px-8 py-3 rounded-full bg-brand-primary text-black font-semibold hover:opacity-95 shadow-lg hover:shadow-2xl hover:shadow-brand-primary/20 transition-all duration-300 text-sm sm:text-base"
           >
             Join Our Mission
           </a>

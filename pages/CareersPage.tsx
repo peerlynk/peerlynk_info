@@ -16,8 +16,8 @@ const CareersPage: React.FC = () => {
             Join Our Team
           </h1>
           <p className="mt-6 text-lg sm:text-xl text-slate-300 leading-relaxed">
-            We’re building the future of academic networking — connecting students, 
-            educators, and institutions worldwide. If you’re driven by innovation, 
+            We’re building the future of academic networking — connecting students,
+            educators, and institutions worldwide. If you’re driven by innovation,
             collaboration, and learning, we’d love to have you on board.
           </p>
         </header>
@@ -29,18 +29,18 @@ const CareersPage: React.FC = () => {
               Current Openings
             </h2>
             <p className="text-slate-400 leading-relaxed">
-              There are currently no open positions, but we’re always on the lookout 
-              for talented individuals who share our vision.  
+              There are currently no open positions, but we’re always on the lookout
+              for talented individuals who share our vision.
               If you’re excited about Peerlynk’s mission, we’d still love to hear from you!
             </p>
             <p className="mt-4 text-slate-400">
               Send your resume and tell us why you’d be a great fit:
             </p>
             <a
-              href="mailto:peerlynk@gmail.com"
+              href="mailto:career@peerlynk.com"
               className="mt-3 inline-block text-cyan-400 font-medium hover:underline transition-all"
             >
-              peerlynk@gmail.com
+              career@peerlynk.com
             </a>
           </div>
 
@@ -50,16 +50,38 @@ const CareersPage: React.FC = () => {
               Internship Program
             </h2>
             <p className="text-slate-400 leading-relaxed mb-6">
-              Kickstart your career with real-world experience.  
-              The Peerlynk Internship Program provides mentorship from experienced developers, 
+              Kickstart your career with real-world experience.
+              The Peerlynk Internship Program provides mentorship from experienced developers,
               hands-on learning, and the opportunity to build features that impact students globally.
             </p>
             <div className="flex justify-center">
               <a
-                href="/internship"
+                href="https://career.peerlynk.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-8 py-3 rounded-full bg-brand-primary text-black font-semibold hover:opacity-95 shadow-lg transition-all duration-300"
               >
                 Learn More & Apply
+              </a>
+            </div>
+          </div>
+
+          {/* Peerlynk Labs Feature Block */}
+          <div className="p-6 rounded-2xl bg-gray-950 border border-slate-800 hover:border-purple-500/40 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300">
+            <h2 className="text-2xl font-semibold text-purple-400 mb-2">
+              Peerlynk Labs
+            </h2>
+            <p className="text-slate-400 leading-relaxed mb-6">
+              Are you passionate about research, open-source architectures, and cutting-edge experimentation? Explore our experimental hub where we building modern tools and architectures for tomorrow's education.
+            </p>
+            <div className="flex justify-start">
+              <a
+                href="https://lab.peerlynk.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-purple-400 border border-purple-500/40 px-6 py-2 rounded-xl text-sm font-medium hover:bg-purple-950/20 transition-all"
+              >
+                Explore lab.peerlynk.com &rarr;
               </a>
             </div>
           </div>
@@ -71,15 +93,22 @@ const CareersPage: React.FC = () => {
             Reach Out to Us
           </h3>
           <p className="text-slate-400 leading-relaxed max-w-2xl mx-auto mb-6">
-            We’re always excited to hear from passionate individuals.  
-            Send your queries or resumes, and join our mission to empower learners.
+            For operational, administrative, or commercial queries, contact our administrative hub. For core platform innovations and resume submissions, reach our career desk.
           </p>
-          <a
-            href="mailto:peerlynk@gmail.com"
-            className="px-8 py-3 rounded-full bg-brand-secondary text-black font-semibold hover:opacity-95 shadow-lg transition-all duration-300"
-          >
-            Contact — peerlynk@gmail.com
-          </a>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <a
+              href="mailto:career@peerlynk.com"
+              className="px-6 py-3 rounded-full bg-brand-primary text-black font-semibold hover:opacity-95 shadow-lg transition-all duration-300 text-sm"
+            >
+              Careers: career@peerlynk.com
+            </a>
+            <a
+              href="mailto:admin@peerlynk.com"
+              className="px-6 py-3 rounded-full bg-brand-secondary text-black font-semibold hover:opacity-95 shadow-lg transition-all duration-300 text-sm"
+            >
+              Admin: admin@peerlynk.com
+            </a>
+          </div>
         </section>
 
         {/* Footer Tagline */}

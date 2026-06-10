@@ -15,53 +15,46 @@ const AboutPage: React.FC = () => {
     {
       Icon: MissionIcon,
       title: "Our Mission",
-      desc: "To empower every learner with a smart, trusted platform that connects academic achievement to mentorship and real-world opportunities. We make collaboration, portfolio-building, and career discovery native to campus life.",
+      desc: "To empower every student with a smart, connected, and opportunity-driven platform where academic learning naturally transforms into portfolio building, professional mentorship, and career discovery.",
       color: "primary",
     },
     {
       Icon: VisionIcon,
       title: "Our Vision",
-      desc: "To become the digital campus for every institution — where students discover opportunity, teachers extend impact, and alumni give back through mentorship and networks that last a lifetime.",
+      desc: "To become the global digital campus ecosystem for every institution — where students discover global opportunities, educators expand pedagogical impact, and alumni seamlessly foster lifelong networks.",
       color: "secondary",
     },
-  ];
-
-  const quickStats = [
-    { label: "Active Students", value: "100k+", color: "text-brand-primary" },
-    { label: "Verified Educators", value: "15k+", color: "text-brand-secondary" },
-    { label: "Projects & Portfolios", value: "40k+", color: "text-brand-primary" },
-    { label: "Partner Institutions", value: "2k+", color: "text-brand-secondary" },
   ];
 
   const coreValues = [
     {
       title: "Connection with Purpose",
-      desc: "We connect people and opportunities so every interaction moves a student forward.",
+      desc: "We connect people and opportunities so every single interaction intentionally moves a student's career forward.",
       Icon: ValueConnectionIcon,
     },
     {
       title: "Innovation for Impact",
-      desc: "Small, thoughtful tools that solve real academic problems — from auto-grouping to portfolio discovery.",
+      desc: "Small, highly thoughtful, and modular tools designed to solve real campus problems — from skill-swapping to structural portfolios.",
       Icon: ValueInnovationIcon,
     },
     {
       title: "Community First",
-      desc: "We design for communities — students, faculty, alumni, and institutions — not just individual feeds.",
+      desc: "We build features explicitly for academic networks — matching students, faculty, and verified alumni instead of individual viral feeds.",
       Icon: ValueCommunityIcon,
     },
     {
       title: "Student-Centric Growth",
-      desc: "Every feature is measured by how well it helps students learn, showcase skills, and access opportunity.",
+      desc: "Every metric we track is measured purely by how efficiently it helps students showcase talent and claim market opportunities.",
       Icon: ValueGrowthIcon,
     },
     {
       title: "Transparency & Trust",
-      desc: "Clear controls, honest moderation, and institution-backed spaces build trust across campuses.",
+      desc: "Clean controls, professional moderation, and verified institute profiles maintain absolute data integrity across campuses.",
       Icon: ValueTransparencyIcon,
     },
     {
       title: "Empowerment Through Education",
-      desc: "We believe learning is most powerful when it's visible, shareable, and connected to mentors and recruiters.",
+      desc: "We believe peer learning becomes unbeatably powerful when milestones are visible, verifiable, and open to top-tier recruiters.",
       Icon: ValueEmpowermentIcon,
     },
   ];
@@ -81,18 +74,19 @@ const AboutPage: React.FC = () => {
             Who We Are
           </h1>
           <p className="mt-6 text-lg sm:text-xl text-slate-300 leading-relaxed">
-            Peerlynk is the academic network built for students, teachers, alumni, 
-            and institutions — a place where learning, mentorship, and opportunity meet. 
-            We design tools that help academic communities connect meaningfully, 
-            share knowledge, and launch real careers.
+            Peerlynk is the academic social network purpose-built for students, educators, alumni, 
+            and modern institutions. We deliver structured systems that enable campus communities 
+            to exchange technical insights, share collaborative projects, and seamlessly map skills to global industries.
           </p>
 
           <div className="mt-8 flex justify-center gap-4">
             <a
-              href="/comming-soon"
+              href="https://play.google.com/store/apps/details?id=com.peerlynk.network"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-brand-primary text-black px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
             >
-             Join Peerlynk
+              Download Peerlynk
             </a>
             <a
               href="/#features"
@@ -103,90 +97,66 @@ const AboutPage: React.FC = () => {
           </div>
         </header>
 
-        {/* Mission & Vision */}
-<div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-  {[
-    {
-      icon: <MissionIcon className="h-8 w-8" />,
-      title: "Our Mission",
-      desc: "To empower every student with a smart, connected, and opportunity-driven platform where learning meets networking.",
-      color: "primary",
-    },
-    {
-      icon: <VisionIcon className="h-8 w-8" />,
-      title: "Our Vision",
-      desc: "To become the world’s most trusted academic networking platform, where every student can learn, showcase, and grow.",
-      color: "secondary",
-    },
-  ].map((card, index) => {
-    const borderColor = card.color === "primary" ? "border-brand-primary/20" : "border-brand-secondary/20";
-    const hoverBorder = card.color === "primary" ? "hover:border-brand-primary/50" : "hover:border-brand-secondary/50";
-    const hoverShadow = card.color === "primary" ? "hover:shadow-2xl hover:shadow-brand-primary/20" : "hover:shadow-2xl hover:shadow-brand-secondary/20";
-    const iconBg = card.color === "primary" ? "bg-brand-primary/10 text-brand-primary" : "bg-brand-secondary/10 text-brand-secondary";
+        {/* Mission & Vision Matrix */}
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {missionVisionCards.map((card, index) => {
+            const borderColor = card.color === "primary" ? "border-brand-primary/20" : "border-brand-secondary/20";
+            const hoverBorder = card.color === "primary" ? "hover:border-brand-primary/50" : "hover:border-brand-secondary/50";
+            const hoverShadow = card.color === "primary" ? "hover:shadow-2xl hover:shadow-brand-primary/20" : "hover:shadow-2xl hover:shadow-brand-secondary/20";
+            const iconBg = card.color === "primary" ? "bg-brand-primary/10 text-brand-primary" : "bg-brand-secondary/10 text-brand-secondary";
+            const CurrentIcon = card.Icon;
 
-    return (
-      <div
-        key={index}
-        className={`p-8 rounded-2xl bg-gray-950 ${borderColor} shadow-lg flex flex-col items-center text-center animate-fade-in-up transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 ${hoverBorder} ${hoverShadow}`}
-        style={{ animationDelay: `${0.1 * (index + 1)}s` }}
-      >
-        <div className={`flex-shrink-0 w-14 h-14 flex items-center justify-center ${iconBg} rounded-full mb-4`}>
-          {card.icon}
+            return (
+              <div
+                key={index}
+                className={`p-8 rounded-2xl bg-gray-950 border ${borderColor} shadow-lg flex flex-col items-center text-center animate-fade-in-up transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 ${hoverBorder} ${hoverShadow}`}
+                style={{ animationDelay: `${0.1 * (index + 1)}s` }}
+              >
+                <div className={`flex-shrink-0 w-14 h-14 flex items-center justify-center ${iconBg} rounded-full mb-4`}>
+                  <CurrentIcon className="h-8 w-8" />
+                </div>
+                <h3 className="text-2xl font-semibold text-white">{card.title}</h3>
+                <p className="mt-2 text-slate-400 text-sm sm:text-base leading-relaxed">{card.desc}</p>
+              </div>
+            );
+          })}
         </div>
-        <h3 className="text-2xl font-semibold text-white">{card.title}</h3>
-        <p className="mt-2 text-slate-400">{card.desc}</p>
-      </div>
-    );
-  })}
-</div>
 
-        {/* Quick Stats */}
-        {/* <section className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-5xl mx-auto text-center animate-fade-in-up">
-          {quickStats.map((stat, i) => (
-            <div
-              key={i}
-              className="p-5 rounded-xl bg-gray-950 border border-slate-800 hover:border-brand-primary/40 hover:shadow-lg hover:scale-105 transition-all duration-300"
-            >
-              <div className={`text-2xl font-bold ${stat.color}`}>{stat.value}</div>
-              <div className="text-slate-400 text-sm mt-1">{stat.label}</div>
-            </div>
-          ))}
-        </section> */}
-
-        {/* Core Values */}
+        {/* Core Values Section */}
         <section className="mt-20 max-w-6xl mx-auto animate-fade-in-up">
           <h2 className="text-3xl font-bold text-center mb-10 bg-gradient-to-r from-brand-primary to-brand-secondary text-transparent bg-clip-text">
             Our Core Values
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {coreValues.map((val, i) => (
-              <div
-                key={i}
-                className="p-6 rounded-2xl bg-gray-950 border border-slate-800 hover:border-brand-primary/40 hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-start space-x-4"
-              >
-                <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-brand-primary/10">
-                  <val.Icon className="h-6 w-6" />
+            {coreValues.map((val, i) => {
+              const ValueIcon = val.Icon;
+              return (
+                <div
+                  key={i}
+                  className="p-6 rounded-2xl bg-gray-950 border border-slate-800 hover:border-brand-primary/40 hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-start space-x-4"
+                >
+                  <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-brand-primary/10 text-brand-primary">
+                    <ValueIcon className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-white">{val.title}</h4>
+                    <p className="text-slate-400 mt-1 text-sm leading-relaxed">{val.desc}</p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="font-semibold text-white">{val.title}</h4>
-                  <p className="text-slate-400 mt-1 text-sm">{val.desc}</p>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
 
-        {/* Team CTA */}
+        {/* Team Collaboration CTA */}
         <section className="mt-24 max-w-4xl mx-auto text-center animate-fade-in-up">
           <h3 className="text-3xl font-bold mb-3 text-white">
             Meet Our Team
           </h3>
-          <p className="text-slate-400 leading-relaxed max-w-2xl mx-auto">
-            Behind Peerlynk is a passionate group of developers, educators, and innovators 
-            working together to connect campuses worldwide. Our team is dedicated to 
-            building meaningful tools that empower students, teachers, and alumni 
-            to learn, collaborate, and grow together.
+          <p className="text-slate-400 leading-relaxed max-w-2xl mx-auto text-sm sm:text-base">
+            Behind Peerlynk is a distributed loop of engineers, product builders, and academic advisors 
+            shipping dedicated systems to institutional communities worldwide. We build spaces where structural learning, peer mentorship, and global opportunities converge.
           </p>
 
           <div className="mt-8 flex justify-center gap-4">
@@ -205,11 +175,11 @@ const AboutPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Footer tagline */}
+        {/* Informational Footer Tagline */}
         <footer className="mt-24 text-center text-slate-400 animate-fade-in-up">
-          <p className="max-w-2xl mx-auto">
-            Peerlynk — where academic life, mentorship, and career opportunity meet. 
-            Built to help you learn, showcase, and connect.
+          <p className="max-w-2xl mx-auto text-sm">
+            Peerlynk — where campus life, deep mentorship, and technical validation meet. 
+            Engineered to showcase architectural talent and scale educational values.
           </p>
         </footer>
       </div>
